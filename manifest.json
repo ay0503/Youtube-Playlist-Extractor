@@ -1,17 +1,24 @@
 {
   "manifest_version": 3,
-  "name": "YouTube Song Extractor",
+  "name": "YouTube Playlist Video Extractor",
   "version": "1.0",
-  "description": "Extracts songs from YouTube video pages.",
+  "description": "Extracts songs from a YouTube song playlist video and converts it to a Spotify playlist.",
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.youtube.com/watch?v=*"],
-      "js": ["contentScript.js"],
+      "matches": [
+        "https://www.youtube.com/watch?v=*"
+      ],
+      "js": [
+        "contentScript.js"
+      ],
       "run_at": "document_idle"
     }
   ],
-  "permissions": ["activeTab", "storage"]
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
 }
