@@ -135,14 +135,14 @@ const main = () => {
           // Add a click event listener to the new button
           spotifyButton.addEventListener("click", () => {
             // Redirect to the Spotify login/authentication route
-            window.open("http://localhost:3000/login", "_blank");
+            window.open("https://pacific-waters-12367-53d691b4af26.herokuapp.com/login", "_blank");
           });
 
           // Insert the new button before the like button
           likeButton.parentElement.insertBefore(spotifyButton, likeButton);
 
           // Now, execute the fetch request
-          fetch("http://localhost:3000/process-songs", {
+          fetch("https://pacific-waters-12367-53d691b4af26.herokuapp.com/process-songs", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
