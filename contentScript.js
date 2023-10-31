@@ -1,22 +1,3 @@
-function parseSongString(song) {
-  let parts = song.includes(" - ") ? song.split(" - ") : song.split("-");
-  // if (song.includes("•")) {
-  //   let parts = song.includes(" • ") ? song.split(" • ") : song.split("•");
-  // } else {
-
-  // }
-
-
-  if (parts.length !== 2) {
-    throw new Error("Invalid song format");
-  }
-
-  return {
-    artist: parts[0].trim(),
-    title: parts[1].trim(),
-  };
-}
-
 const extractSongsFromDescriptionCompact = () => {
   const songs = [];
 
@@ -63,7 +44,7 @@ const extractSongsFromFirstComment = () => {
     const currentNode = timestamp.nextSibling;
     const songTitle = currentNode.textContent.trim();
     if (songTitle && !songs.includes(songTitle)) {
-      songs.push(parseSongString(songTitle));
+      songs.push(songTitle);
     }
   });
   console.log(songs);
